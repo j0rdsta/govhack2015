@@ -1,1 +1,31 @@
-<map zoom="main.map.zoom" center="main.map.center"></map>
+<div class="homepage-hero-module" ng-init="main.startVideo()">
+  <div class="video-container">
+      <div class="filter"></div>
+      <video autoplay loop class="fillWidth">
+          <source src="assets/videos/feature.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+          <source src="assets/videos/feature.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+      </video>
+      <div class="poster hidden">
+          <img src="assets/videos/feature.jpg" alt="">
+      </div>
+  </div>
+  <div class="content-container">
+    <div class="inner">
+      <div class="row">
+        <div class="medium-8 columns medium-centered text-center">
+          <h1>Welcome to the HUB</h1>
+          <p>&nbsp;</p>
+          <div class="row">
+            <div class="medium-6 columns medium-centered">
+              <input type="text" ng-model="asyncSelected" placeholder="Search for articles" typeahead="address for address in getLocation($viewValue) | filter:$viewValue" typeahead-loading="loadingLocations" class="search-articles text-center">
+              <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="featured-articles">
+
+</div>
