@@ -24,8 +24,16 @@ $topbar-bg-color: #5AADBB;
   padding: 0.2em 0;
 }
 
+body > div {
+  height: 100%;
+}
+
 .panel {
   margin-top: 50px;
+}
+
+.here-map {
+  height: 100%;
 }
 
 .th {

@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('govhack2015', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router', 'mm.foundation']);
+    .module('govhack2015', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router', 'mm.foundation', 'angular-here-maps']);
 
 })();
