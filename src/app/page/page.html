@@ -1,4 +1,9 @@
 <div ng-repeat="story in page.data | limitTo: 1">
+  <img ng-src="{{story['Primary image']}}" alt="" />
+  <p>{{story['Primary image caption']}}</p>
   <h1>{{ story.Title }}</h1>
-  <div class="html" ng-bind-html="story.html"></div>
+  <ul class="inline-list">
+    <li ng-repeat="keyword in story.Keywords"><span class="label">{{keyword}}</span></li>
+  </ul>
+  <div class="story-html" ng-bind-html="story.html"></div>
 </div>

@@ -29,6 +29,18 @@
         }
     ];
 
+    console.log(vm.data[0].Keywords);
+
+    vm.data[0].Keywords = vm.data[0].Keywords.split(", ");
+
+    /* vm.addRandomParagraphStyling = function(){
+      var $paragraphs = $('.story-html p');
+      console.log("paragraphs: ", $paragraphs);
+      var $selectedParagraph = $($paragraphs[Math.floor(Math.random()*$paragraphs.length)]);
+      console.log("selectedParagraph: ", $selectedParagraph);
+      $selectedParagraph.css({'font-size': '16px' });
+    } */
+
     // $http.get('http://data.gov.au/dataset/3fd356c6-0ad4-453e-82e9-03af582024c3/resource/3182591a-085a-465b-b8e5-6bfd934137f1/download/Localphotostories2009-2014-JSON.json', { cache: true})
     // .success(function(data, status, headers, config) {
       // vm.data = data;
