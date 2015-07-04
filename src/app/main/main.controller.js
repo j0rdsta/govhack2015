@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController() {
+  function MainController($http) {
     var vm = this;
 
     vm.map = {
@@ -78,6 +78,20 @@
             $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
 
         });
-    }
+    };
+
+    vm.getLocation = function(val) {
+      return [
+        "test", "hello"
+      ];
+      /* return $http.get('http://maps.googleapis.com/maps/api/geocode/json')
+      .success(function(data, status, headers, config) {
+        var addresses = [];
+        angular.forEach(data.results, function(item){
+          addresses.push(item.formatted_address);
+        });
+        return addresses;
+      }); */
+    };
   }
 })();

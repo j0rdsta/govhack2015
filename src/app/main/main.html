@@ -17,7 +17,7 @@
           <p>&nbsp;</p>
           <div class="row">
             <div class="medium-6 columns medium-centered">
-              <input type="text" ng-model="asyncSelected" placeholder="Search for articles" typeahead="address for address in getLocation($viewValue) | filter:$viewValue" typeahead-loading="loadingLocations" class="search-articles text-center">
+              <input type="text" ng-model="asyncSelected" placeholder="Search for articles" typeahead="address for address in main.getLocation($viewValue)" typeahead-loading="loadingLocations" class="search-articles text-center">
               <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
             </div>
           </div>
