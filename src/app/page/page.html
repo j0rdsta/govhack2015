@@ -1,3 +1,4 @@
 <div ng-repeat="story in page.data | limitTo: 1">
   <h1>{{ story.Title }}</h1>
+  <div class="html" ng-bind-html="story.html"></div>
 </div>
