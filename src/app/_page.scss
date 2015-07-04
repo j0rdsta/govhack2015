@@ -1,0 +1,37 @@
+/* Individual News Pages */
+
+.story-heading {
+  height: rem-calc(400);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.story {
+  background: #fff;
+  border: 1px solid $primary-color;
+  padding: rem-calc(15) 0 rem-calc(30);
+  position: relative;
+  top: -150px;
+  border-radius: $global-radius;
+
+  .subtitle {
+    padding: 0 rem-calc(30) rem-calc(15);
+    border-bottom: 1px solid $primary-color;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .story-date {
+    padding: rem-calc(30) rem-calc(30) 0;
+  }
+
+  .story-title {
+    padding: 0 rem-calc(30) rem-calc(30);
+  }
+
+  .story-html {
+    padding: rem-calc(30);
+  }
+}

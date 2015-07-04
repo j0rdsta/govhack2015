@@ -1,12 +1,20 @@
 <section ng-repeat="story in page.data | limitTo: 1" class="">
   <header class="story-heading" ng-style="{'background-image':'url('+story['Primary image']+')'}"></header>
-  <article class="story">
-    <p>{{story['Primary image caption']}}</p>
-    <h1>{{ story.Title }}</h1>
-    <ul class="inline-list">
-      <li ng-repeat="keyword in story.Keywords"><span class="label">{{keyword}}</span></li>
-    </ul>
-    <div class="story-html" ng-bind-html="story.html"></div>
-  </article>
+  <div class="row">
+    <div class="large-12 columns">
+      <article class="story">
+        <section class="subtitle">
+          <p>{{ story['Primary image caption'] }}</p>
+        </section>
+        <h5 class="story-date">{{ story.Date }}</h5>
+        <h1 class="story-title">{{ story.Title }}</h1>
+        <ul class="inline-list">
+          <li ng-repeat="keyword in story.Keywords"><span class="label">{{ keyword }}</span></li>
+        </ul>
+        <div class="story-html" ng-bind-html="story.html"></div>
+      </article>
+    </div>
+  </div>
+
 
 </section>
