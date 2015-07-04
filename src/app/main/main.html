@@ -26,20 +26,22 @@
   </div>
 </div>
 
-<div masonry column-width="200">
-  <!-- <div class="masonry-brick" ng-repeat="brick in bricks">
-      <img ng-src="{{ brick.src }}" alt="A masonry brick">
-  </div> -->
-  <div class="masonry-brick">
+<packery ng-init="objects = [{id:'1'},{id:'2'},{id:'3'}]">
+
+  <packery-object>
     <img src="assets/images/matt.jpg" alt="A masonry brick">
-  </div>
-  <div class="masonry-brick">
+  </packery-object>
+
+  <packery-object>
     <img src="assets/images/matt.jpg" alt="A masonry brick">
-  </div>
-  <div class="masonry-brick">
+  </packery-object>
+
+  <packery-object>
     <img src="assets/images/matt.jpg" alt="A masonry brick">
-  </div>
-  <div class="masonry-brick">
+  </packery-object>
+
+  <packery-object>
     <img src="assets/images/matt.jpg" alt="A masonry brick">
-  </div>
-</div>
+  </packery-object>
+
+</packery>
