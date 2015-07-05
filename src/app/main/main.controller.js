@@ -31,6 +31,19 @@
           vm.scaleBannerVideoSize('.video-container .filter');
           vm.scaleBannerVideoSize('.video-container video');
       });
+
+      var container = document.querySelector('.packery');
+
+      var pckry = new Packery( container, {
+          itemSelector: '.item',
+          columnWidth: '.grid-sizer',
+          gutter: 10
+      });
+
+      $('.packery img').bind('load', function() {
+          //when an image inside the packery class loads loads trigger pckry to re layout the images
+          pckry.layout();
+      });
     }
 
 
