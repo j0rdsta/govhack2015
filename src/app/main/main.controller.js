@@ -93,18 +93,21 @@
         });
     };
 
-    vm.getLocation = function(val) {
-      return [
-        "test", "hello"
-      ];
-      /* return $http.get('http://maps.googleapis.com/maps/api/geocode/json')
-      .success(function(data, status, headers, config) {
-        var addresses = [];
-        angular.forEach(data.results, function(item){
-          addresses.push(item.formatted_address);
-        });
-        return addresses;
-      }); */
-    };
+    /* Example article subjects. Given more time we could've grabbed the keywords from the ABC data */
+    vm.articles = [
+      "aboriginal",
+      "environment",
+      "transport",
+      "drought",
+      "mackay",
+      "tourism",
+      "history",
+      "summer",
+      "landscape",
+      "photography",
+      "urban",
+      "rescue",
+      "people"
+    ];
   }
 })();
