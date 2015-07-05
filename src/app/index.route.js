@@ -14,7 +14,7 @@
         controller: 'MainController',
         controllerAs: 'main'
       }).state('page', {
-        url: '/page',
+        url: '/page/:id',
         templateUrl: 'app/page/page.html',
         controller: 'PageController',
         controllerAs: 'page'

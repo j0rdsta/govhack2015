@@ -1,9 +1,9 @@
-<section ng-repeat="story in page.data | limitTo: 1" class="">
-  <header class="story-heading" ng-style="{'background-image':'url('+story['Primary image']+')'}"></header>
+<section>
+  <header class="story-heading" ng-style="{'background-image':'url('+page.story['Primary image']+')'}"></header>
   <div class="row">
     <div class="large-12 columns">
       <article class="story">
-        <h1 class="story-title">{{ story.Title }}</h1>
+        <h1 class="story-title">{{ page.story.Title }}</h1>
         <section class="story-inner">
           <div class="row">
             <aside class="large-3 columns">
@@ -16,31 +16,31 @@
                 <div class="aside-content text-center">
                   <h5 class="story-date">
                     <small>Date</small><br>
-                    {{ story.Date }}
+                    {{ page.story.Date }}
                   </h5>
                 </div>
                 <div class="aside-content text-center">
                   <h5 class="story-location">
                     <small>Location</small><br>
-                    {{ story.Place }}, {{ story.State }}
+                    {{ page.story.Place }}, {{ page.story.State }}
                   </h5>
                 </div>
                 <div class="aside-content text-center">
                   <h5>
                     <small>Tags</small><br>
-                    {{ story.Keywords }}
+                    {{ page.story.Keywords }}
                   </h5>
                 </div>
               </div>
             </aside>
             <article class="large-9 columns">
-              <p><img ng-src="{{ story['Primary image'] }}" alt=""></p>
+              <p><img ng-src="{{ page.story['Primary image'] }}" alt=""></p>
               <p>
-                <em>{{ story['Primary image caption'] }}</em><br>
-                <small>{{ story['Primary image rights information'] }}</small>
+                <em>{{ page.story['Primary image caption'] }}</em><br>
+                <small>{{ page.story['Primary image rights information'] }}</small>
               </p>
               <hr>
-              <div class="story-html" ng-bind-html="story.html"></div>
+              <div class="story-html" ng-bind-html="page.story.html"></div>
               <hr>
               <h3 class="text-center">You May Also Like</h3>
               <ul class="large-block-grid-3">
