@@ -56,10 +56,6 @@
     .success(function(data, status, headers, config) {
       console.log(data);
       vm.story = data;
-      $('body').append('<div class="parse" style="display:none"></div>');
-      $('.parse').html($.parseHTML(vm.story.Story.trim()));
-      vm.story.Story = $('.parse').find('.story_body').html();
-      console.log(vm.story);
     }).error(function(data, status, headers, config) {
       alert("Error on JSON file query");
     });
