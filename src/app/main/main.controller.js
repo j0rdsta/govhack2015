@@ -9,7 +9,7 @@
   function MainController($http) {
     var vm = this;
 
-    vm.startVideo = function()
+    vm.init = function()
     {
       vm.scaleVideoContainer();
 
@@ -35,6 +35,15 @@
       $('.packery img').bind('load', function() {
           //when an image inside the packery class loads loads trigger pckry to re layout the images
           pckry.layout();
+      });
+
+      vm.stories = [];
+
+      $http.get('http://dev01.jahead.io/articles', { cache: true})
+      .success(function(data, status, headers, config) {
+        vm.stories = data;
+      }).error(function(data, status, headers, config) {
+        console.log("Error on JSON file query");
       });
     }
 
@@ -64,8 +73,6 @@
         windowHeight = $(window).height() + 5,
         videoWidth,
         videoHeight;
-
-        console.log(windowHeight);
 
         $(element).each(function(){
             var videoAspectRatio = $(this).data('height')/$(this).data('width');

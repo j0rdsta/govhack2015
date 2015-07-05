@@ -1,4 +1,4 @@
-<div class="homepage-hero-module" ng-init="main.startVideo()">
+<div class="homepage-hero-module" ng-init="main.init()">
   <div class="video-container">
       <div class="filter"></div>
       <video autoplay loop class="fillWidth">
@@ -33,87 +33,15 @@
 
   <div class="packery">
     <div class="grid-sizer"></div>
-    <div class="item">
+    <div class="item" ng-repeat="story in main.stories">
       <div class="article">
         <div class="article-thumb">
-          <img src="assets/images/matt.jpg">
+          <img ng-src="{{ story['Primary image'] }}">
         </div>
         <div class="article-content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio veniam libero eius soluta numquam omnis voluptates, quam nostrum architecto reiciendis ipsa doloremque. Labore dolor, beatae blanditiis sunt tenetur asperiores, qui.</p>
+          <p>{{story['Primary image caption']}}</p>
           <div class="article-meta">
-            <a href="#">Read More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="article">
-        <div class="article-thumb">
-          <img src="assets/images/matt.jpg">
-        </div>
-        <div class="article-content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio veniam libero eius soluta numquam omnis voluptates, quam nostrum architecto reiciendis ipsa doloremque. Labore dolor, beatae blanditiis sunt tenetur asperiores, qui.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio veniam libero eius soluta numquam omnis voluptates, quam nostrum architecto reiciendis ipsa doloremque. Labore dolor, beatae blanditiis sunt tenetur asperiores, qui.</p>
-          <div class="article-meta">
-            <a href="#">Read More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="article">
-        <div class="article-thumb">
-          <img src="assets/images/matt.jpg">
-        </div>
-        <div class="article-content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio veniam libero eius soluta numquam omnis voluptates, quam nostrum architecto reiciendis ipsa doloremque. Labore dolor, beatae blanditiis sunt tenetur asperiores, qui.</p>
-          <div class="article-meta">
-            <a href="#">Read More</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="article">
-        <div class="article-thumb">
-          <img src="assets/images/matt.jpg">
-        </div>
-        <div class="article-content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio veniam libero eius soluta numquam omnis voluptates, quam nostrum architecto reiciendis ipsa doloremque. Labore dolor, beatae blanditiis sunt tenetur asperiores, qui.</p>
-          <div class="article-meta">
-            <a href="#">Read More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="article">
-        <div class="article-thumb">
-          <img src="assets/images/matt.jpg">
-        </div>
-        <div class="article-content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio veniam libero eius soluta numquam omnis voluptates, quam nostrum architecto reiciendis ipsa doloremque. Labore dolor, beatae blanditiis sunt tenetur asperiores, qui.</p>
-          <div class="article-meta">
-            <a href="#">Read More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="article">
-        <div class="article-thumb">
-          <img src="assets/images/matt.jpg">
-        </div>
-        <div class="article-content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio veniam libero eius soluta numquam omnis voluptates, quam nostrum architecto reiciendis ipsa doloremque. Labore dolor, beatae blanditiis sunt tenetur asperiores, qui.</p>
-          <div class="article-meta">
-            <a href="#">Read More</a>
+            <a href="#/page/{{story._id}}">Read More</a>
           </div>
         </div>
       </div>
