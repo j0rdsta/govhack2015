@@ -52,9 +52,10 @@
 
     console.log($stateParams.id);
 
-    $http.get('http://dev01.jahead.io/articles/' + $stateParams.id, { cache: true})
+    $http.get('http://dev01.jahead.io/articles/' + $stateParams.id, { cache: true })
     .success(function(data, status, headers, config) {
-      vm.story = vm.data;
+      console.log(data);
+      vm.story = data;
       console.log(vm.story);
     }).error(function(data, status, headers, config) {
       alert("Error on JSON file query");
