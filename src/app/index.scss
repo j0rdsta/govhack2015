@@ -84,6 +84,18 @@ body > div {
   h1 {
     color: white;
   }
+
+  .f-dropdown {
+    max-width: 90%;
+    margin-top: 10px;
+    text-align: left;
+    li {
+      a {
+        padding: 10px 0 10px 20px;
+      }
+    }
+  }
+
 }
 
 .video-container .poster img {
