@@ -9,7 +9,7 @@
   function PageController($http, $stateParams) {
     var vm = this;
 
-    vm.data = [
+    /* vm.data = [
         {
             "Title": "Mittagong Greeny Flat shows eco-living made easy",
             "URL": "http://www.abc.net.au/local/photos/2014/05/26/4012255.htm",
@@ -44,25 +44,24 @@
             "MediaRSS URL": "http://www.abc.net.au/local/photos/2014/10/01/4098040-mediarss.xml",
             "html" : "<p class=\"first\">Venessa Harris, from the remote bush town of Windorah in south-west Queensland, took out a hotly contested modelling competition in Brisbane at the weekend. </p><p>The competition, run by Tamblyn Models, awards the winner a three-year modelling contract and a chaperoned overseas trip to investigate industry opportunities. </p><p>Venessa's mother Karen Monaghan says she was \"gobsmacked\" when her daughter's name was called as the major winner. </p><p>\"I really just didn't know what to do... until the last minute, until they said her name, I couldn't think that it was going to be her,\" Ms Monaghan said.</p><p>\"We just all lost the plot and screamed the house down, it was extremely emotional and overwhelming for [Venessa's grandmother]. It was a really strange feeling.\" </p><p>Ms Monaghan says she knows of only a handful of Indigenous models in Australia, which makes Venessa's achievement even more extraordinary.</p><p>\"There's literally half a dozen [Indigenous models] that we could find, so it's really special for us to be able to represent our culture in this area,\" she said.</p><p>\"It's huge for the Wangkangurru-Yarluyandi people, our whole family is talking about it... it's a huge thing for a 12-year-old Aboriginal girl.\"</p><p>She says it is a particularly special time for her people with a native title determination happening this week in Birdsville in south-west Queensland.</p><p>A spokesperson from Tamblyn Models says Venessa will be involved in training, development and other \"age-appropriate\" activities until she is considered old enough to participate in the chaperoned overseas trip.</p><p>Venessa is the youngest entrant in the competition's 26-year history to take out the major international prize. </p><p>She won the Way Out West Fashion Quest held in Longreach in July, which automatically qualified her to enter the Brisbane competition. </p>"
         },
-    ];
+    ]; */
 
-    vm.story = vm.data[$stateParams.id - 1];
-    console.log(vm.story);
+
 
     // vm.data[0].Keywords = vm.data[0].Keywords.split(", ");
 
-    // $http.get('http://data.gov.au/dataset/3fd356c6-0ad4-453e-82e9-03af582024c3/resource/3182591a-085a-465b-b8e5-6bfd934137f1/download/Localphotostories2009-2014-JSON.json', { cache: true})
-    // .success(function(data, status, headers, config) {
-      // vm.data = data;
-      // $http.get(data[0].URL).success(function(data, status, headers, config) {
-      //   console.log(data);
-      // }).error(function(data, status, headers, config) {
-      //   alert("Error on inner HTML query");
-      // });
-    // })
-    // .error(function(data, status, headers, config) {
-    //   alert("Error on JSON file query");
-    // });
+    console.log($stateParams.id);
+
+    $http.get('http://dev01.jahead.io/articles/' + $stateParams.id, { cache: true })
+    .success(function(data, status, headers, config) {
+      console.log(data);
+      vm.story = data;
+      console.log(vm.story);
+    }).error(function(data, status, headers, config) {
+      alert("Error on JSON file query");
+    });
+
+
 
   }
 })();

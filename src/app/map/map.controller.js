@@ -23,6 +23,23 @@
       }
     ];
 
+    $http.get('http://dev01.jahead.io/articles', { cache: true})
+    .success(function(data, status, headers, config) {
+      vm.locations = [];
+      vm.center = {
+        lat: data[0].Latitude,
+        lng: data[0].Longitude
+      }
+      for(var i = 0; i < data.length; i++) {
+        var coordinates = {
+          lat: data[i]["Latitude"],
+          lng: data[i]["Longitude"]
+        };
+        vm.locations.push({"coordinates": coordinates})
+      }
+    }).error(function(data, status, headers, config) {
+      console.log("Error on JSON file query");
+    });
     vm.data = [
       {
           "Title": "Mittagong Greeny Flat shows eco-living made easy",
