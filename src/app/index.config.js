@@ -6,7 +6,7 @@
     .config(config);
 
   /** @ngInject */
-  function config($logProvider, toastr, MapConfigProvider) {
+  function config($logProvider, toastr, MapConfigProvider, $httpProvider) {
     // Enable log
     $logProvider.debugEnabled(true);
 
@@ -23,6 +23,21 @@
         pixelRatio: 2, // Optional (Default: 1)
         pixelPerInch: 320 // Optional (Default: 72)
     });
+
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    $httpProvider.interceptors.push(function ($q, $location) {
+      return {
+        'request': function (config) {
+          config.headers = config.headers || {};
+          return config;
+        },
+        'responseError': function (response) {
+          return $q.reject(response);
+        }
+      };
+    });
+
   }
 
 })();

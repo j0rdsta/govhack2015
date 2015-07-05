@@ -1,0 +1,39 @@
+header.top-header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 75px;
+  line-height: 75px;
+  background: rgba(#000, 0.1);
+  z-index: 9999;
+  h1 {
+    color: white;
+    line-height: inherit;
+    vertical-align: middle;
+  }
+  nav {
+    ul.inline-list {
+      margin-left: 0;
+      li {
+        float: none;
+        display: inline-block;
+        text-align: right;
+        margin-left: 0;
+        a {
+          line-height: 75px;
+          vertical-align: middle;
+          display: inline-block;
+          color: #fff;
+          font-weight: 100;
+          text-transform: uppercase;
+          padding: 0 15px;
+          transition: 0.2s linear all;
+          &:hover {
+            background: rgba(#fff, 0.4);
+            // color: #000;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,1 +1,51 @@
-<map zoom="main.map.zoom" center="main.map.center"></map>
+<div class="homepage-hero-module" ng-init="main.init()">
+  <div class="video-container">
+      <div class="filter"></div>
+      <video autoplay loop class="fillWidth">
+          <source src="assets/videos/feature.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+          <source src="assets/videos/feature.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+      </video>
+      <div class="poster hidden">
+          <img src="assets/videos/feature.jpg" alt="">
+      </div>
+  </div>
+  <div class="content-container">
+    <div class="inner">
+      <div class="row">
+        <div class="medium-12 columns medium-centered text-center">
+          <h1 class="home-title">Connecting Communities</h1>
+          <p>&nbsp;</p>
+          <div class="row">
+            <div class="medium-5 columns medium-centered">
+              <form action="#/page/2">
+                <img src="assets/images/search-icon.png" class="search-icon">
+                <input type="text" ng-model="asyncSelected" placeholder="Search for articles" typeahead="article for article in main.articles | filter:$viewValue | limitTo:5" typeahead-loading="loadingLocations" class="search-articles">
+                <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="featured-articles">
+
+  <div class="packery">
+    <div class="grid-sizer"></div>
+    <div class="item" ng-repeat="story in main.stories">
+      <div class="article">
+        <div class="article-thumb">
+          <img ng-src="{{ story['Primary image'] }}">
+        </div>
+        <div class="article-content">
+          <p>{{story['Primary image caption']}}</p>
+          <div class="article-meta">
+            <a href="#/page/{{story._id}}">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </packery>
+</div>

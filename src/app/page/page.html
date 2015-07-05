@@ -1,0 +1,61 @@
+<section>
+  <header class="story-heading" ng-style="{'background-image':'url('+page.story['Primary image']+')'}"></header>
+  <div class="row">
+    <div class="large-12 columns">
+      <article class="story">
+        <h1 class="story-title">{{ page.story.Title }}</h1>
+        <section class="story-inner">
+          <div class="row">
+            <aside class="large-3 columns">
+              <div class="story-aside">
+                <div class="aside-content text-center">
+                  <h4>
+                    Article Info
+                  </h4>
+                </div>
+                <div class="aside-content text-center">
+                  <h5 class="story-date">
+                    <small>Date</small><br>
+                    {{ page.story.Date }}
+                  </h5>
+                </div>
+                <div class="aside-content text-center">
+                  <h5 class="story-location">
+                    <small>Location</small><br>
+                    {{ page.story.Place }}, {{ page.story.State }}
+                  </h5>
+                </div>
+                <div class="aside-content text-center">
+                  <h5>
+                    <small>Tags</small><br>
+                    {{ page.story.Keywords }}
+                  </h5>
+                </div>
+              </div>
+            </aside>
+            <article class="large-9 columns">
+              <p><img ng-src="{{ page.story['Primary image'] }}" alt=""></p>
+              <p>
+                <em>{{ page.story['Primary image caption'] }}</em><br>
+                <small>{{ page.story['Primary image rights information'] }}</small>
+              </p>
+              <hr>
+              <div class="story-html" ng-bind-html="page.story.Story"></div>
+              <hr>
+              <h3 class="text-center">You May Also Like</h3>
+              <ul class="large-block-grid-3">
+                <li><a href="#"><img src="http://placehold.it/210x125" alt=""></a></li>
+                <li><a href="#"><img src="http://placehold.it/210x125" alt=""></a></li>
+                <li><a href="#"><img src="http://placehold.it/210x125" alt=""></a></li>
+              </ul>
+              <hr>
+              <h3>There are 123 comments</h3>
+            </article>
+          </div>
+        </section>
+      </article>
+    </div>
+  </div>
+
+
+</section>

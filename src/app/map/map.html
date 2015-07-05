@@ -1,0 +1,17 @@
+<map zoom="map.zoom" center="map.center">
+  <markers locations="map.locations" icon="map.icon"></marker>
+</map>
+
+<script type="text/ng-template" id="map_modal.html">
+  <div class="row">
+    <div class="large-6 columns">
+      <img ng-src="{{ data['Primary image'] }}" alt="" />
+    </div>
+    <div class="large-6 columns">
+      <h3>{{ data.Title }}</h3>
+      <a ng-href="#/page/1" class="button" ng-click="cancel()">View article</a>
+    </div>
+  </div>
+
+  <a class="close-reveal-modal" ng-click="cancel()">&#215;</a>
+</script>
