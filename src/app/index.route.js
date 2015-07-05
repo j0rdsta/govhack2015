@@ -18,6 +18,11 @@
         templateUrl: 'app/page/page.html',
         controller: 'PageController',
         controllerAs: 'page'
+      }).state('map', {
+        url: '/map',
+        templateUrl: 'app/map/map.html',
+        controller: 'MapController',
+        controllerAs: 'map'
       });
 
     $urlRouterProvider.otherwise('/');
