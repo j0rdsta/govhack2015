@@ -30,10 +30,9 @@
 </div>
 
 <div class="featured-articles">
-
-  <div class="packery">
+  <packery gutter="10" column-width=".grid-sizer" draggable="false">
     <div class="grid-sizer"></div>
-    <div class="item" ng-repeat="story in main.stories">
+    <packery-object ng-repeat="story in main.stories">
       <div class="article">
         <div class="article-thumb">
           <img ng-src="{{ story['Primary image'] }}">
@@ -45,7 +44,6 @@
           </div>
         </div>
       </div>
-    </div>
-
+    </packery-object>
   </packery>
 </div>
