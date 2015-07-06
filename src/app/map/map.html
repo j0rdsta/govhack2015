@@ -1,5 +1,5 @@
 <map zoom="map.zoom" center="map.center">
-  <markers locations="map.locations" icon="map.icon"></marker>
+  <marker coordinates="location.coordinates" ng-repeat="location in map.locations" icon="map.icon"></marker>
 </map>
 
 <script type="text/ng-template" id="map_modal.html">
@@ -9,7 +9,7 @@
     </div>
     <div class="large-6 columns">
       <h3>{{ data.Title }}</h3>
-      <a ng-href="#/page/5598c1f4f547171b1045072e" class="button" ng-click="cancel()">View article</a>
+      <a ng-href="#/page/{{ data._id }}" class="button" ng-click="cancel()">View article</a>
     </div>
   </div>
 
