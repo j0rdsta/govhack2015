@@ -17,9 +17,9 @@
           <p>&nbsp;</p>
           <div class="row">
             <div class="medium-5 columns medium-centered">
-              <form action="#/page/5598c1f4f547171b1045073a">
+              <form action="#">
                 <img src="assets/images/search-icon.png" class="search-icon">
-                <input type="text" ng-model="asyncSelected" placeholder="Search for articles" typeahead="keyword for keyword in main.keywords | filter:$viewValue | limitTo:5" typeahead-loading="loadingLocations" class="search-articles">
+                <input type="text" ng-change="main.filterArticles()" ng-model="main.filter" placeholder="Search for articles" typeahead="keyword for keyword in main.keywords | filter:$viewValue | limitTo:5" typeahead-loading="loadingLocations" class="search-articles">
                 <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
               </form>
             </div>

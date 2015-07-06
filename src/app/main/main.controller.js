@@ -26,22 +26,28 @@
 
       vm.stories = [];
 
-      $http.get('http://dev01.jahead.io/articles', { cache: true})
+      $http.get('http://dev01.jahead.io/articles?take=10', { cache: true})
       .success(function(data, status, headers, config) {
         vm.stories = data;
-
         vm.keywords = [];
         angular.forEach(data, function(item){
-          // var split = item.Keywords.split(", ");
-          // vm.keywords.push(split);
-          vm.keywords.push(item.Keywords);
+          var split = item.Keywords.split(", ");
+          vm.keywords = vm.keywords.concat(split);
         });
-        console.log(vm.keywords);
       }).error(function(data, status, headers, config) {
         console.log("Error on JSON file query");
       });
     }
 
+    vm.filterArticles = function() {
+      $http.get('http://dev01.jahead.io/articles?take=10&filter={"keyword":  /.*'+vm.filter+'.*/ }', { cache: true})
+      .success(function(data, status, headers, config) {
+        console.log(data);
+        vm.stories = data;
+      }).error(function(data, status, headers, config) {
+        console.log("Error on JSON file query");
+      });
+    }
 
     vm.scaleVideoContainer = function() {
 
