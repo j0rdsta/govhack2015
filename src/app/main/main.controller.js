@@ -40,7 +40,7 @@
     }
 
     vm.filterArticles = function() {
-      $http.get('http://dev01.jahead.io/articles?take=10&filter={"keyword":  /.*'+vm.filter+'.*/ }', { cache: true})
+      $http.get('http://dev01.jahead.io/articles?take=10&filter={"Keywords": {"$regex":"'+vm.filter+'"}}', { cache: true})
       .success(function(data, status, headers, config) {
         console.log(data);
         vm.stories = data;
