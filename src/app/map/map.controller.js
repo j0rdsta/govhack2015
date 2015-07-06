@@ -18,7 +18,7 @@
 
     vm.data = {};
 
-    $http.get('http://dev01.jahead.io/articles', { cache: true})
+    $http.get('http://dev01.jahead.io/articles?take=50', { cache: true})
     .success(function(data, status, headers, config) {
       vm.locations = [];
       vm.center = {
